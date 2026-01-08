@@ -478,6 +478,8 @@ static int pinnacle_init(const struct device *dev) {
         }
     }
 
+    pinnacle_write(dev, PINNACLE_SLEEP_TIMER, 30000/(1000/6));
+
     uint8_t packet[1];
     ret = pinnacle_seq_read(dev, PINNACLE_SLEEP_INTERVAL, packet, 1);
 
